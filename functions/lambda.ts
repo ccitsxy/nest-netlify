@@ -18,7 +18,7 @@ const createNestServer = async (expressInstance) => {
 
 const appServer = serverless(server);
 
-exports.handler = async (event: any, context: any) => {
+exports.handler = async (event, context) => {
   if (!cacheNest) {
     await createNestServer(server)
       .then(() => console.log('Nest Ready'))
